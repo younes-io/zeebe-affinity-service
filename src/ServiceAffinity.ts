@@ -134,6 +134,7 @@ export class ServiceAffinity {
 
     try {
       await topic.destroy();
+      delete this.affinityCallbacks[processInstanceKey];
     } catch (err) {
       console.error(err);
     }
